@@ -35,7 +35,7 @@ const WhoIsThis = ({ onSelectRole }) => {
           </div>
         ))}
       </div>
-  <audio ref={audioRef} src="netflix_intro.mp3" preload="auto" />
+  <audio ref={audioRef} src={import.meta.env.BASE_URL + 'netflix_intro.mp3'} preload="auto" />
     </div>
   );
 };
