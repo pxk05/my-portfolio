@@ -6,7 +6,7 @@ const Splash = ({ onSplashComplete }) => {
   const pathRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio('/netflix_intro.mp3');
+  const audio = new Audio('netflix_intro.mp3');
     audio.preload = 'auto';
     audio.volume = 1;
     audioRef.current = audio;
