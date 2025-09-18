@@ -1,0 +1,51 @@
+.splash-container {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.logo { display: flex; flex-direction: column; align-items: center; }
+
+.logo-text {
+  font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  color: #e50914;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: logo-animation 2s forwards;
+}
+
+.logo-curve { width: min(760px, 86vw); height: clamp(26px, 7vw, 46px); margin-top: 0.15rem; }
+.logo-curve path { stroke-width: 6; stroke-dasharray: 190; stroke-dashoffset: 190; }
+.logo-curve path {
+  fill: none;
+  stroke: #e50914;
+  stroke-width: 5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 2px 6px rgba(229, 9, 20, 0.45));
+  stroke-dasharray: 160;
+  stroke-dashoffset: 160;
+  animation: draw-curve 1.2s ease-out 0.35s forwards;
+}
+
+.sound-cta {
+  margin-top: 1rem;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.sound-cta:hover { border-color: #fff; }
+
+@keyframes draw-curve { to { stroke-dashoffset: 0; } }
+@keyframes logo-animation { 0% { opacity: 0; transform: scale(0.86); } 70% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.08); } }

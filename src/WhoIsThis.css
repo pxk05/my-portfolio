@@ -1,0 +1,49 @@
+.who-is-this-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Netflix Sans', sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: var(--accent);
+}
+
+.roles-list {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.role-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.role-card:hover {
+  transform: scale(1.05);
+}
+
+.role-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.role-name {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}

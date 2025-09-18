@@ -1,0 +1,91 @@
+.footer-container {
+  background: linear-gradient(to right, #141414, #222222);
+  padding: 30px 20px;
+  color: #b3b3b3; /* Light grey for text */
+  text-align: center;
+  font-size: 0.9em;
+  font-weight: 300;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  margin-bottom: 20px;
+  padding: 0;
+  width: 100%;
+}
+
+.connect-text {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #e50914; /* Netflix red for 'Let's Connect' */
+  margin: 0 0 10px 0; /* Add some bottom margin */
+}
+
+.social-links {
+  display: flex;
+  gap: 30px; /* Space between email and LinkedIn links */
+  align-items: center;
+  justify-content: center; /* Center the social links */
+}
+
+.social-links a {
+  color: #b3b3b3; /* Light grey for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1em;
+}
+
+.social-links a:hover {
+  color: #e50914; /* Netflix red on hover */
+}
+
+.footer-divider {
+  border: none;
+  border-top: 1px solid #444; /* Darker grey line */
+  margin: 20px auto;
+  width: 90%;
+}
+
+.copyright-text {
+  font-size: 0.8em;
+  color: #777; /* Even lighter grey for copyright */
+  margin-top: 20px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 20px; /* Space between icons */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-content a {
+  color: #e50914; /* Netflix red for links */
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.1em; /* Slightly larger font for links */
+}
+
+.footer-content a:hover {
+  color: #ff4d4d; /* Lighter red on hover */
+}
