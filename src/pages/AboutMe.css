@@ -78,8 +78,19 @@
 }
 
 @media (max-width: 900px) {
-  .about-hero { grid-template-columns: 1fr; text-align: center; }
-  .about-hero .profile-picture { margin-top: var(--space-2); }
+  .about-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+  }
+  .about-hero .profile-picture-wrapper {
+    order: -1; /* Place the image above the text content */
+    margin-bottom: var(--space-2); /* Add some space below the image */
+  }
+  .about-hero .profile-picture {
+    margin-top: 0; /* Remove previous margin-top */
+  }
 }
 
 .about-me-container h1 {

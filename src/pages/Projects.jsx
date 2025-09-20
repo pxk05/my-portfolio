@@ -7,8 +7,6 @@ import lipreadImage from '../assets/lipread.jpg';
 const Projects = () => {
   const projects = [
     { id: 1, title: 'Nyano Kokh', description: 'A digital platform designed to support maternal and child health by spreading awareness, resources, and community care. It focuses on providing warmth, guidance, and accessibility for mothers.', link: 'https://github.com/pxk05/Nyano-Kakh', imageUrl: nyanoKokhLogo },
-    // { id: 2, title: 'Hospital Management System', description: 'A brief description of Hospital Management System.', link: '#', imageUrl: 'https://via.placeholder.com/300x200?text=Hospital+Management' },
-    // { id: 3, title: 'Crop Prediction Model', description: 'A brief description of Crop Prediction Model.', link: '#', imageUrl: 'https://via.placeholder.com/300x200?text=Crop+Prediction' },
     { id: 4, title: 'Tealicious Webapp', description: 'A web-based project for tea lovers, offering an engaging platform to explore varieties of teas. It combines design, taste experience, and interactive features for a modern tea culture.', link: 'https://github.com/pxk05/Tealicious.git', imageUrl: tealiciousLogo },
     {
       id: 5,

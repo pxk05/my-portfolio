@@ -27,7 +27,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`} role="navigation" aria-label="Primary">
       <div className="container nav-inner">
-        <Link to="/" className="navbar-brand" onClick={close}>
+        <Link to="/" className="navbar-brand">
           <span className="brand-initial">PK</span>
           <span className="brand-name">Pratikshya Kafle</span>
         </Link>
@@ -47,19 +47,18 @@ const Navbar = () => {
         <ul
           id="primary-navigation"
           className={`navbar-links ${open ? 'open' : ''}`}
-          onClick={close}
         >
           <li>
-            <NavLink to="/home" className={({ isActive }) => (isActive ? 'active' : undefined)}>Home</NavLink>
+            <NavLink to="/home" onClick={close}>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/about" className={({ isActive }) => (isActive ? 'active' : undefined)}>About Me</NavLink>
+            <NavLink to="/about" onClick={close}>About Me</NavLink>
           </li>
           <li>
-            <NavLink to="/projects" className={({ isActive }) => (isActive ? 'active' : undefined)}>Projects</NavLink>
+            <NavLink to="/projects" onClick={close}>Projects</NavLink>
           </li>
           <li>
-            <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : undefined)}>Contact</NavLink>
+            <NavLink to="/contact" onClick={close}>Contact</NavLink>
           </li>
         </ul>
       </div>

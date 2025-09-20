@@ -12,6 +12,21 @@
   left: 0;
 }
 
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .social-links {
+    flex-direction: column; /* Stack social links vertically */
+    gap: 15px; /* Reduce gap between stacked links */
+  }
+
+  .footer-content {
+    align-items: center; /* Ensure content is centered */
+  }
+}
+
 .footer-top {
   display: flex;
   flex-direction: column; /* Stack items vertically */

@@ -11,7 +11,6 @@ import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './Footer'; // Import the new Footer component
-// import Skills from './pages/Skills';
 
 function App() {
   const [showSplash, setShowSplash] = useState(false); // Start with splash hidden
@@ -42,21 +41,22 @@ function App() {
   console.log('Rendering App - showSplash:', showSplash, 'showWhoIsThis:', showWhoIsThis);
 
   return (
-    <Router>
-      {showWhoIsThis && <WhoIsThis onSelectRole={handleSelectRole} />}
-      {!showWhoIsThis && showSplash && <Splash onSplashComplete={handleSplashComplete} />}
-      {!showWhoIsThis && !showSplash && (
+    <Router basename="/my-portfolio/">
+      {showWhoIsThis ? (
+        <WhoIsThis onSelectRole={handleSelectRole} />
+      ) : showSplash ? (
+        <Splash onSplashComplete={handleSplashComplete} />
+      ) : (
         <div className="app-container">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<AboutMe />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/contact" element={<Contact />} />
-            {/* Skills merged into About Me; route removed */}
+            <Route path="*" element={<Home />} />
           </Routes>
-          <Footer /> {/* Add the Footer component here */}
+          <Footer />
         </div>
       )}
     </Router>

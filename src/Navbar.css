@@ -69,8 +69,8 @@
 
 /* Toggle */
 .navbar-toggle {
-  display: none;
-  background: transparent;
+  display: none; /* Hide by default on desktop */
+  background: transparent; /* Revert background to transparent */
   border: 1px solid transparent;
   width: 44px;
   height: 44px;
@@ -85,9 +85,9 @@
   display: block;
   width: 22px;
   height: 2px;
-  background: #fff;
+  background: var(--accent); /* Reverted to accent color */
   margin: 6px auto;
-  transition: transform .2s ease, opacity .2s ease;
+  transition: transform .2s ease, opacity .2s ease; /* Re-added transition properties */
 }
 .navbar-toggle.open span:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
@@ -101,19 +101,82 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .navbar-toggle { display: inline-flex; align-items: center; justify-content: center; }
-  .navbar-links {
+  .navbar-brand {
+    z-index: 1002; /* Ensure brand is above the toggle button */
+    position: relative; /* Add position relative to ensure z-index works */
+  }
+
+  .navbar-toggle {
+    display: flex;
+    z-index: 1001;
+    position: relative;
+    margin-right: 1rem;
+  }
+
+  .navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--accent);
+    display: block;
     position: absolute;
-    top: 60px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .navbar-toggle span:nth-child(1) {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
+
+  .navbar-toggle span:nth-child(3) {
+    transform: translate(-50%, calc(-50% + 8px));
+  }
+
+  .navbar-toggle.open span:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  .navbar-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar-toggle.open span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  .navbar-links {
+    position: fixed;
+    top: 0;
     right: 0;
+    bottom: 0;
     left: 0;
-    background: #141414;
-    border-top: 1px solid #1f1f1f;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(8px);
     display: none;
     flex-direction: column;
-    gap: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1000;
   }
-  .navbar-links.open { display: flex; }
-  .navbar-links li { border-bottom: 1px solid #1f1f1f; }
-  .navbar-links li a { padding: 1rem 2rem; display: block; }
+  .navbar-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; /* Reverting to 0 for debugging */
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Reverting to 100vh for debugging */
+    background: rgba(20, 20, 20, 0.95);
+    overflow-y: auto; /* Keep overflow-y for scrolling */
+    transition: all 0.3s ease-in-out;
+    z-index: 1001; /* Increased z-index to ensure visibility */
+  }
+  .navbar-links li {
+    margin: 10px 0;
+  }
+
+  .navbar-links li a {
+    display: block;
+    font-size: 1rem; /* Decreased font size for mobile */
+  }
 }
